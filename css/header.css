@@ -1,0 +1,140 @@
+/* Header */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 121px;
+    background-color: #fff;
+    z-index: 99;
+}
+.head-inner {
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    transition: 0.5s;
+    position: relative;
+}
+/* .head-inner::before {
+    content: "";
+    position: absolute;
+    top: 121px;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    background-color: #fff;
+    box-shadow: 0px 1px 0px #7a7a7aab;
+    transition: all 0.2s;
+} */
+.t_head {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    z-index: 99;
+    background-color: #fff;
+}
+.logo {
+    width: 202px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.min_banner {
+    width: 300px;
+    height: 40px;
+    /* background-color: #223c86; */
+    position: absolute;
+    top: 25%;
+    right: 0;
+}
+.search_box {
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    position: relative;
+}
+.search_box span {
+    color: #223c86;
+    font-size: 14px;
+    font-weight:900;
+}
+.search_box input {
+    width: 150px;
+    height: 20px;
+    outline: none;
+    border: 3px solid #223c86;
+}
+.s_icon {
+    display: inline-block;
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    background: url(/img/icon_search.gif) no-repeat center center;
+}
+.b_head {
+    width: 100%;
+    height: 71px;
+    background-color: #fff;
+}
+.h_cate {
+    width: 1200px;
+    margin: 0 auto;
+}
+.h_cate > li {
+    float: left;
+}
+.h_cate li a {
+    display: inline-block;
+    width: 150px;
+    line-height: 71px;
+    text-align: center;
+    position: relative;
+    z-index: 99;
+}
+.h_cate li a span::before {
+    content: "";
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0px;
+    height: 5px;
+    background-color: #223c86;
+    transition: 0.4s;
+}
+.h_cate li a span:hover::before {
+    width: 110px;
+}
+.submenu {
+    position: absolute;
+    top: -200px;
+    height: 0px;
+    opacity: 0;
+    transition: 0.4s;
+    overflow: hidden;
+}
+.b_head::before {
+    content: "";
+    position: absolute;
+    top: 121px;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    background-color: #fff;
+    box-shadow: 0 1px 0 #72727283;
+    transition: 0.4s;
+}
+.submenu li a {
+    color: #494949;
+    font-size: 14px;
+    line-height: 3.5em;
+}
+.b_head:hover .submenu{
+    top: 120px;
+    height: 400px;
+    opacity: 1;
+}
+.b_head:hover::before {
+    height: 300px;
+}
