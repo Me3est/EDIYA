@@ -12,6 +12,8 @@ $('window').ready(function() {
         })
         $('.main_bean h2').text('품질')
         $('.main_bean span').text('ALWAYS BESIDE YOU, EDIYA COFFEE')
+        $('.bean_container').css({display:'none'});
+        $('.quality_container').css({display:'block'});
     })
     $('.BEAN').click(function(){
             $('.main_bean').css({
@@ -19,6 +21,8 @@ $('window').ready(function() {
             })
             $('.main_bean h2').text('원두')
             $('.main_bean span').text('ALWAYS BESIDE YOU, EDIYA BEAN')
+            $('.quality_container').css({display:'none'});
+            $('.bean_container').css({display:'block'});
     })
     // else if($('.Quarilty').click) {
     // }
