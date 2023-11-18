@@ -18,45 +18,51 @@ $(window).ready(function() {
         })
     }
     // banner slide
-    let bn = $('.banner');
-    let idx = 0
-    let md_width = $('.rc_slider').width();
-    let item_width = md_width / 3;
-    let b_count = $('.banner').length;
-    for(let i =0; i<b_count; i++) {
-        $('.banner').eq(i).css({left:item_width * i})
-    }
-    $('#btn_banner_R').click(function() {
-        $('.btn_banner').css({pointerEvents: 'none'})
-        // 일정시간 후에 버튼 다시 살리기
-        setTimeout(() => {
-            $('.btn_banner').css({pointerEvents: 'auto'})
-        }, 500);
-        $('.banner').animate({ left: `-=${item_width}` }, 500,'linear');
-        $('.banner').eq(idx%b_count).animate({
-            left:md_width
-        }, 0)
-        idx+=1;
-    })
-    $('#btn_banner_L').click(function() {
-        idx-=1;
-        $('.banner').eq(idx%b_count).animate({
-            left:-1*item_width
-        }, 0)
-        $('.banner').animate({ left: `+=${item_width}` }, 500,'linear');
-    })
+    // let bn = $('.banner');
+    // let idx = 0
+    // let md_width = $('.rc_slider').width();
+    // let item_width = md_width / 3;
+    // let b_count = $('.banner').length;
+    // for(let i =0; i<b_count; i++) {
+    //     $('.banner').eq(i).css({left:item_width * i})
+    // }
+    // $('#btn_banner_R').click(function() {
+    //     $('.btn_banner').css({pointerEvents: 'none'})
+    //     // 일정시간 후에 버튼 다시 살리기
+    //     setTimeout(() => {
+    //         $('.btn_banner').css({pointerEvents: 'auto'})
+    //     }, 500);
+    //     $('.banner').animate({ left: `-=${item_width}` }, 500,'linear');
+    //     $('.banner').eq(idx%b_count).animate({
+    //         left:md_width
+    //     }, 0)
+    //     idx+=1;
+    // })
+    // $('#btn_banner_L').click(function() {
+    //     idx-=1;
+    //     $('.banner').eq(idx%b_count).animate({
+    //         left:-1*item_width
+    //     }, 0)
+    //     $('.banner').animate({ left: `+=${item_width}` }, 500,'linear');
+    // })
     // 자동 슬라이드 
-    let interval ="";
-    function auto_banner() {
-        interval = setInterval(()=>{
-            $('#btn_banner_R').trigger('click')
-        }, 2000 + 500) // 500은 멈춰있을 시간   
-    }
-    auto_banner();
-    // 마우스 오버시 자동 슬라이드 멈춤
-    $('.rc_slider').hover(function(){
-        clearInterval(interval)
-    }, function(){
-        auto_banner()
-    });
+    // let interval ="";
+    // function auto_banner() {
+    //     interval = setInterval(()=>{
+    //         $('#btn_banner_R').trigger('click')
+    //     }, 2000 + 500) // 500은 멈춰있을 시간   
+    // }
+    // auto_banner();
+    // // 마우스 오버시 자동 슬라이드 멈춤
+    // $('.rc_slider').hover(function(){
+    //     clearInterval(interval)
+    // }, function(){
+    //     auto_banner()
+    // });
+    $('.rc_slider').slick({
+        dots:true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1
+      });
 })
